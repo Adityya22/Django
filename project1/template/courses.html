@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <style>
+        .main1{  
+            background: cyan;
+            color: black;
+            padding: 20px;
+            font-size: 50px;
+            justify-content: center;
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div class="main1">{{bdata}}</div>
+    <div>
+        {% for n in clist %}
+        <div align="left">{{n}}</div>
+        {% endfor %}
+    </div>
+    <br>
+    <table border="2",cellpadding="20"  style="width:500px ">
+            <tr>
+                <td align="center">Name</td>
+                <td align="center">Phone</td>
+            </tr>
+            {% for i in infolist %}
+            <tr>
+                <td align="center">{{i.name}}</td>
+                <td align="center">{{i.city}}</td>
+            </tr>
+            {% endfor %}
+    </table>
+    {% if numberlist1|length > 0 %}
+    
+        {% for n in numberlist1 %}
+            {% if n > 20  %}
+                {{n}}
+            {% endif  %}
+        {% endfor %}
+    {% else %}
+        No data found 
+    {% endif %}
+    <br><br>
+
+    <!-- <div>{% for n in numberlist2 %}</div>
+    <div>{{n}}</div>
+    <div>{% endfor %}</div> -->
+
+    <div>
+        {{time.now}}
+    </div>
+</body>
+</html>
